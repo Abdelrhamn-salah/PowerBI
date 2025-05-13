@@ -4,18 +4,94 @@
 
 The Sales Report dashboard is a powerful tool designed to deliver insights into sales performance across various cities and product categories. By employing data visualization techniques, it transforms complex sales data into an accessible and actionable format, empowering stakeholders to make informed decisions based on revenue and quantity metrics.
 
-## Data Sources
+**Sales Performance Report**
 
-The data powering this dashboard is sourced from [insert data source here]. This could be a database, CSV file, or API—please update this section with the specific source used.
+**Overview** This Power BI model delivers a consolidated view of customer orders, product performance, and revenue metrics. It is designed to help analysts and stakeholders track sales trends, top-selling products, customer distribution, and overall business performance.
 
-## Dashboard Design
+---
 
-The dashboard is structured in a 2x2 grid layout, featuring:
-- A dark background for contrast.
-- White text for titles and labels.
-- Light blue bars and pie segments for data visualization.
+### Data Sources
 
-Each section complements the others, providing a holistic view of sales performance.
+* **Customers**: Contains customer demographic and geographic information.
+* **Products**: Lists the company's product catalog with categories and identifiers.
+* **Orders**: Transactional order data capturing order dates, quantities, and sales revenue.
+
+---
+
+### Data Model Structure
+
+The model consists of three tables with one-to-many relationships:
+
+```text
+Customers (1) ———< Orders >——— (1) Products
+                 
+Relationships:
+- Customers[CustomerID] → Orders[CustomerID]
+- Products[ProductID] → Orders[ProductID]
+```
+
+* **Customers**
+
+  * City
+  * CountryRegion
+  * CustomerID
+  * Name
+  * PostalCode
+
+* **Products**
+
+  * Category
+  * ProductID
+  * ProductName
+
+* **Orders**
+
+  * CustomerID
+  * OrderDate
+  * OrderItemID
+  * ProductID
+  * Quantity   *(Aggregated as ****\`\`****)*
+  * Revenue    *(Aggregated as ****\`\`****)*
+
+---
+
+### Measures & Calculations
+
+* **Total Quantity Sold**: `SUM(Orders[Quantity])`
+* **Total Revenue**: `SUM(Orders[Revenue])`
+* **Average Order Value**: `DIVIDE([Total Revenue], DISTINCTCOUNT(Orders[OrderItemID]))`
+* **Orders by Region**: Custom DAX measure filtering by `Customers[CountryRegion]`.
+
+Feel free to extend with additional measures such as month-over-month growth, product category breakdowns, and customer segmentation metrics.
+
+---
+
+### Visualizations
+
+Use this model to build reports and dashboards, such as:
+
+* Time series charts of revenue and quantity trends.
+* Map visual showing sales distribution by city or region.
+* Bar charts of top products by revenue or units sold.
+* Customer insights by segment or geography.
+
+---
+
+### Setup & Refresh
+
+1. Connect to your data sources (e.g., Excel, SQL Server, CSV) and load the three tables.
+2. Verify data types and relationships as defined above.
+3. Configure scheduled refresh settings in Power BI Service to keep data up to date.
+
+---
+
+### Contributors
+
+* *Model design and DAX authored by Abdelrhman Salem*
+
+---
+
+*For questions or collaboration, reach out to the BI team or submit an issue in the project repository.*
 
 ## Visualizations
 
