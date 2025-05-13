@@ -1,4 +1,4 @@
-![Uploading image.png…]()
+![Screenshot (96)](https://github.com/user-attachments/assets/3718b647-af2d-4bcd-b385-e49b59b23a42)
 
 
 # Sales Report Dashboard
