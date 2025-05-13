@@ -1,4 +1,8 @@
+![Screenshot (94)](https://github.com/user-attachments/assets/be713b7b-c919-44d0-a92d-cb7df1bc5b77)
+
+
 # Sales Report Dashboard
+
 
 ## Introduction
 
