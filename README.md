@@ -1,4 +1,4 @@
-![Screenshot (94)](https://github.com/user-attachments/assets/be713b7b-c919-44d0-a92d-cb7df1bc5b77)
+![Uploading image.png…]()
 
 
 # Sales Report Dashboard
@@ -23,6 +23,9 @@ The Sales Report dashboard is a powerful tool designed to deliver insights into 
 ---
 
 ### Data Model Structure
+
+![Screenshot (94)](https://github.com/user-attachments/assets/be713b7b-c919-44d0-a92d-cb7df1bc5b77)
+
 
 The model consists of three tables with one-to-many relationships:
 
